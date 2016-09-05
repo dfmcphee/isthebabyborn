@@ -27,7 +27,7 @@ router.get('/:id/edit', function(req, res, next) {
         baby: baby,
         statusTypes: req.app.locals.statusTypes,
         moment: moment,
-        fullUrl: req.protocol + '://' + req.get('host')
+        fullUrl: 'https://' + req.get('host')
       });
     }
   });
