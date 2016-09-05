@@ -1,12 +1,16 @@
 <% include header %>
-
   <h1><%- title %></h1>
 
-  <h2>Create a new baby</h2>
-  <form action="/create" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name" />
-    <button type="submit">Create</button>
-  </form>
+  
 
+  <h2>Add your baby to get started.</h2>
+  <form action="/create" method="POST">
+    <div class="stack stack--alignment-trailing">
+      <div class="text-field">
+        <label class="text-field__label" for="name">Your baby's name</label>
+        <input class="text-field__input" type="text" name="name" />
+      </div>
+      <button type="submit" class="button">Create</button>
+    </div>
+  </form>
 <% include footer %>

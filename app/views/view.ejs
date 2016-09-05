@@ -4,11 +4,20 @@
 
 <% include status %>
 
-<h2>Subscribe to updates</h2>
-<form action="/<%= baby.id %>/subscribe" method="POST">
-  <label for="content">Email address</label>
-  <input type="email" name="email" />
-  <button type="submit">Subscribe</button>
-</form>
+<% if (successMessage) { %>
+  <h2>Succesfully subscribed</h2>
+  <p>You will receive new updates via email to the address you provided.</p>
+<% } else { %>
+  <h2>Subscribe to updates</h2>
+  <form action="/<%= baby.id %>/subscribe" method="POST">
+    <div class="section">
+      <div class="text-field">
+        <label class="text-field__label" for="content">Email address</label>
+        <input class="text-field__input" type="email" name="email" />
+      </div>
+      <button class="button" type="submit">Subscribe</button>
+    </div>
+  </form>
+<% } %>
 
 <% include footer %>

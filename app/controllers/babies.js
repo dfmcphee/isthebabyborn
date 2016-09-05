@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../models');
 var uuid = require('uuid');
+var moment = require('moment');
 
 module.exports = function(app) {
   app.use('/', router);
@@ -23,13 +24,17 @@ router.get('/:id/edit', function(req, res, next) {
     } else {
       res.render('edit', {
         title: baby.name,
-        baby: baby
+        baby: baby,
+        statusTypes: req.app.locals.statusTypes,
+        moment: moment,
+        fullUrl: req.protocol + '://' + req.get('host')
       });
     }
   });
 });
 
 router.get('/:id/view', function(req, res, next) {
+  successMessage = req.query.flash ? true : false
   db.Baby.findOne({
     id: req.params.id,
     include: [db.Status]
@@ -39,7 +44,9 @@ router.get('/:id/view', function(req, res, next) {
     } else {
       res.render('view', {
         title: baby.name,
-        baby: baby
+        baby: baby,
+        moment: moment,
+        successMessage: successMessage
       });
     }
   });

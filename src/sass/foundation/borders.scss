@@ -1,0 +1,23 @@
+/*============================================================================
+  Borders
+==============================================================================*/
+
+$borders-data: (
+  base: 0.1rem solid rgba(color(charcoal), 0.7),
+  thick: 0.2rem solid color(charcoal)
+);
+
+/*============================================================================
+  Returns the default border.
+  @param {String} $variant The key for the border variant
+  @return {List} The border value.
+==============================================================================*/
+@function border($variant: base) {
+  $fetched-value: map-get($borders-data, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @error "Border variant `#{$variant}` not found. Available variants: #{available-names($borders-data)}";
+  }
+}

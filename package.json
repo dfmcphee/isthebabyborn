@@ -12,8 +12,11 @@
     "ejs": "^2.3.1",
     "express": "^4.13.3",
     "glob": "^6.0.4",
+    "mailgun-js": "^0.7.12",
     "method-override": "^2.3.0",
+    "moment": "^2.14.1",
     "morgan": "^1.6.1",
+    "node-env-file": "^0.1.8",
     "pg": "^4.4.1",
     "pg-hstore": "2.3.2",
     "sequelize": "^3.5.1",
@@ -21,10 +24,14 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
+    "browserify": "^13.1.0",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-nodemon": "^2.0.2",
     "gulp-livereload": "^3.8.0",
-    "gulp-plumber": "^1.0.0"
+    "gulp-nodemon": "^2.0.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^2.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

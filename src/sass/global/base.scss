@@ -1,0 +1,25 @@
+body {
+  color: color(ink);
+  font-size: font-size();
+  background: color(background);
+}
+
+/** Tables **/
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  border: border();
+  padding: spacing(tight);
+}
+
+td {
+  border: border();
+  padding: spacing(tight);
+}
+
+.hide {
+  display: none !important;
+}

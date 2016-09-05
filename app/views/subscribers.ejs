@@ -1,6 +1,10 @@
 <h2>Subscribers</h2>
-<ul>
-  <% for (var i=0; i < baby.Subscribers.length; i++) { %>
-     <li><%= baby.Subscribers[i].email %></li>
-  <% } %>
-</ul>
+<% if (baby.Subscribers.length > 0) { %>
+  <ul class="list list--type-unordered">
+    <% for (var i=0; i < baby.Subscribers.length; i++) { %>
+       <li><%= baby.Subscribers[i].email %></li>
+    <% } %>
+  </ul>
+<% } else { %>
+  <p>No subscribers added yet.</p>
+<% } %>

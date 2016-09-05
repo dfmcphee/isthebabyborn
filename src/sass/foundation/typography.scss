@@ -1,0 +1,23 @@
+/*============================================================================
+  Typography functions
+==============================================================================*/
+
+$font-sizes-data: (
+  base: rem(16px),
+  input: rem(16px),
+  large: rem(20px)
+);
+
+/*============================================================================
+  Returns the font size for a given variant.
+  @param {String} $variant - The key for the given font size.
+  @return {Number} The font size.
+==============================================================================*/
+@function font-size($variant: base) {
+  $fetched-value: map-get($font-sizes-data, $variant);
+  @if $fetched-value != null {
+    @return $fetched-value;
+  } @else {
+    @error "Font size `#{$variant}` not found. Available font sizes: #{available-names($font-sizes-data)}";
+  }
+}

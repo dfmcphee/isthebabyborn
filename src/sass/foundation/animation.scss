@@ -1,0 +1,41 @@
+/*============================================================================
+  Animation
+==============================================================================*/
+
+$animation-duration-data: (
+  fast: 100ms,
+  base: 250ms,
+  slow: 500ms
+);
+
+/*============================================================================
+  Returns the animation duration.
+  @return {Duration} The animation duration value.
+==============================================================================*/
+@function animation-duration($variant: base) {
+  $fetched-value: map-get($animation-duration-data, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @error "Animation duration `#{$variant}` not found. Available durations: #{available-names($animation-duration-data)}";
+  }
+}
+
+$animation-timing-data: (
+  base: ease-in-out,
+);
+
+/*============================================================================
+  Returns the animation timing.
+  @return {Timinig} The animation timing value.
+==============================================================================*/
+@function animation-timing($variant: base) {
+  $fetched-value: map-get($animation-timing-data, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @error "Animation timing `#{$variant}` not found. Available timings: #{available-names($animation-timing-data)}";
+  }
+}

@@ -1,0 +1,6 @@
+$max-width: rem(700px);
+
+@mixin max-width {
+  width: $max-width;
+  max-width: 90vw;
+}

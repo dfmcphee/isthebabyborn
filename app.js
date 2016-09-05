@@ -8,7 +8,7 @@ require('./config/express')(app, config);
 
 db.sequelize
   .sync({
-    force: false
+    force: true
   })
   .then(function () {
     app.listen(config.port, function () {
