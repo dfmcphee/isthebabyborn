@@ -2,8 +2,12 @@ var path = require('path');
 var rootPath = path.normalize(__dirname + '/..');
 var env = require('node-env-file');
 var currentEnv = process.env.NODE_ENV || 'development';
+var fs = require('fs');
+var envPath = __dirname + '/.env';
 
-env(__dirname + '/.env');
+if (fs.existsSync(envPath)) {
+  env(envPath);
+}
 
 var config = {
   development: {
