@@ -1,0 +1,14 @@
+<% include header %>
+
+<h1><%= baby.name %></h1>
+
+<% include status %>
+
+<h2>Subscribe to updates</h2>
+<form action="/<%= baby.id %>/subscribe" method="POST">
+  <label for="content">Email address</label>
+  <input type="email" name="email" />
+  <button type="submit">Subscribe</button>
+</form>
+
+<% include footer %>

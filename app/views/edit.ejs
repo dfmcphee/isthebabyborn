@@ -1,0 +1,17 @@
+<h1><%= baby.name %></h1>
+
+<p><a href="/<%= baby.id %>/view">Share</a></p>
+
+<h2>Add a status</h2>
+<form action="/<%= baby.id %>/status/create" method="POST">
+  <input type="hidden" name="token" value="<%= baby.token %>"/>
+  <label for="content">Status content</label>
+  <input type="text" name="content" />
+  <button type="submit">Add status</button>
+</form>
+
+<% include status %>
+
+<% include subscribers %>
+
+<% include footer %>
