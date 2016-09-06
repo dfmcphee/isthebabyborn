@@ -1,6 +1,7 @@
 .callout {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin-right: -1 * spacing();
   margin-bottom: -1 * spacing();
@@ -12,7 +13,7 @@
 }
 
 .callout__image {
-  flex: 0 0 80px;
+  flex: 0 0 48px;
 }
 
 .callout__content {
