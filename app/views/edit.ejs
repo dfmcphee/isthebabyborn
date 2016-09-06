@@ -2,9 +2,14 @@
 
   <h1><%= baby.name %></h1>
 
-  <div class="text-field">
-    <label class="text-field__label" for="content">Share this link with family and friends</label>
-    <input class="text-field__input" type="text" value="<%= fullUrl %>/<%= baby.id %>/view" readonly/>
+  <div class="connected-fields">
+    <div class="text-field">
+      <label class="text-field__label" for="content">Share this link with family and friends</label>
+      <input class="text-field__input" type="text" id="share-link" value="<%= fullUrl %>/<%= baby.id %>/view" readonly/>
+    </div>
+    <button class="button button--clipboard" data-clipboard-target="#share-link">
+      <img class="icon" src="/img/clipboard.svg" alt="Copy to clipboard">
+    </button>
   </div>
 
   <h2>Add a status</h2>

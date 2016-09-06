@@ -2,4 +2,9 @@
   margin: spacing() auto;
   @include vertical-rhythm(loose);
   @include max-width;
+
+  @media (max-width: breakpoint(mobile)) {
+    margin: spacing() auto;
+    max-width: 100%;
+  }
 }

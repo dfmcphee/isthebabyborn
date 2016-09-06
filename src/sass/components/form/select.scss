@@ -17,6 +17,7 @@
 .select__input {
   font-size: font-size(input);
   padding: spacing(tight);
+  height: $input-height;
   line-height: 1.2;
   width: 100%;
   transition: all animation-duration() animation-timing();

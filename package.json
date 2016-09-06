@@ -24,7 +24,9 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
+    "alertify.js": "^1.0.12",
     "browserify": "^13.1.0",
+    "clipboard": "^1.5.12",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",

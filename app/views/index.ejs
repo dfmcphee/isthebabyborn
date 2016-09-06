@@ -1,11 +1,10 @@
 <% include header %>
   <h1><%- title %></h1>
 
-  
+  <p>Add your baby to get started.</p>
 
-  <h2>Add your baby to get started.</h2>
   <form action="/create" method="POST">
-    <div class="stack stack--alignment-trailing">
+    <div class="connected-fields">
       <div class="text-field">
         <label class="text-field__label" for="name">Your baby's name</label>
         <input class="text-field__input" type="text" name="name" />

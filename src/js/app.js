@@ -1,4 +1,14 @@
+var Clipboard = require('clipboard');
+var alertify = require('alertify.js');
+
 function onReady() {
+  var clipboard = new Clipboard('.button--clipboard');
+
+  clipboard.on('success', function(event) {
+    event.clearSelection();
+    alertify.log('Link copied to clipboard.');
+  });
+
   var statusSelect = document.getElementById('status-select');
   var customType = document.getElementById('custom-status');
 

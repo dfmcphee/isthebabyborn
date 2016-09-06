@@ -1,13 +1,17 @@
 .card {
   display: flex;
-  background: color(white);
+  background: rgba(color(white), 0.95);
   padding: spacing(loose);
   flex-direction: column;
   border-radius: border-radius();
-  border: border();
   @include vertical-rhythm(loose);
 
   + .card {
     margin-top: spacing(loose);
+  }
+
+  @media (max-width: breakpoint(mobile)) {
+    border-radius: 0;
+    padding: spacing();
   }
 }

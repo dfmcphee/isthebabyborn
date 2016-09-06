@@ -1,0 +1,23 @@
+/*============================================================================
+  Breakpoints
+==============================================================================*/
+
+$breakpoints-data: (
+  base: 1200px,
+  mobile: 600px
+);
+
+/*============================================================================
+  Returns a breakpoint for a given key.
+  @param {String} $variant The key for breakpoint
+  @return {Number} The breakpoint value.
+==============================================================================*/
+@function breakpoint($variant: base) {
+  $fetched-value: map-get($breakpoints-data, $variant);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @error "Breakpoint `#{$variant}` not found. Available variants: #{available-names($breakpoints-data)}";
+  }
+}

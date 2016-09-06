@@ -1,7 +1,9 @@
 body {
   color: color(ink);
   font-size: font-size();
-  background: color(background);
+  background: #e55d87;
+  background: linear-gradient(to top, #e55d87 , #5fc3e4);
+  background-attachment: fixed;
 }
 
 /** Tables **/

@@ -1,8 +1,10 @@
 .button {
+  height: $input-height;
   font-size: font-size(input);
   font-weight: 500;
+  line-height: 1.2;
   padding: spacing(tight);
-  border: border(thick);
+  border: border();
   border-radius: border-radius();
   transition: all animation-duration() animation-timing();
   border-color: color(ink);
