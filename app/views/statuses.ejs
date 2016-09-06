@@ -1,0 +1,30 @@
+
+<% if (statuses.length > 0) { %>
+  <div class="section">
+    <h2>Current status</h2>
+    <div class="callout">
+      <span class="callout__image">
+        <img src="/img/<%= statuses[0].type %>.svg" alt="" />
+      </span>
+      <span class="callout__content"><%= statuses[0].content %></span>
+      <span class="callout__meta"><%= moment(statuses[0].createdAt).fromNow(); %></span>
+    </div>
+  </div>
+
+  <% if (statuses.length > 1) { %>
+    <div class="section">
+      <h3>History</h3>
+      <ul class="list list--type-image">
+        <% for (var i = 1; i < statuses.length; i++) { %>
+          <li class="list-item">
+            <span class="list-item__image"><img src="/img/<%= statuses[i].type %>.svg" alt="" /></span>
+            <span class="list-item__content"><%= statuses[i].content %></span>
+            <span class="list-item__meta"><%= moment(statuses[i].createdAt).fromNow(); %></span>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  <% } %>
+<% } else { %>
+  <p>No statuses added yet.</p>
+<% } %>

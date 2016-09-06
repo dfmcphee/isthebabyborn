@@ -1,0 +1,26 @@
+.callout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: -1 * spacing();
+  margin-bottom: -1 * spacing();
+
+  > * {
+    margin-right: spacing();
+    margin-bottom: spacing();
+  }
+}
+
+.callout__image {
+  flex: 0 0 80px;
+}
+
+.callout__content {
+  flex: 1 1 auto;
+  font-size: 3rem;
+}
+
+.callout__meta {
+  flex: 0 0 auto;
+  font-size: 1.3rem;
+}

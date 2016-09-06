@@ -8,8 +8,10 @@ var mailgun = require('mailgun-js')({
 });
 
 function updateSubscribers(babyId, status) {
-  db.Baby.findOne({
-    id: babyId,
+  db.Baby.find({
+    where: {
+      id: babyId
+    },
     include: [db.Subscriber]
   }).then(function(baby) {
     var emailText = 'Status for <strong>' + baby.name + '</strong> changed to "' + status + '".';

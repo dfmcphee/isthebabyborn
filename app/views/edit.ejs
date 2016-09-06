@@ -12,31 +12,33 @@
     </button>
   </div>
 
-  <h2>Add a status</h2>
-  <form action="/<%= baby.id %>/status/create" method="POST">
-    <input type="hidden" name="token" value="<%= baby.token %>"/>
-    <div class="section">
-      <div id="status-select" class="select">
-        <label class="select__label" for="type">Status</label>
-        <div class="select__wrapper">
-          <select class="select__input" name="type">
-            <% for (var type in statusTypes) { %>
-               <option value="<%= type %>"><%= statusTypes[type] %></option>
-            <% } %>
-          </select>
+  <div class="section">
+    <h2>Add a status</h2>
+    <form action="/<%= baby.id %>/status/create" method="POST">
+      <input type="hidden" name="token" value="<%= baby.token %>"/>
+      <div class="section">
+        <div id="status-select" class="select">
+          <label class="select__label" for="type">Status</label>
+          <div class="select__wrapper">
+            <select class="select__input" name="type">
+              <% for (var type in statusTypes) { %>
+                 <option value="<%= type %>"><%= statusTypes[type] %></option>
+              <% } %>
+            </select>
+          </div>
         </div>
+
+        <div id="custom-status" class="text-field hide">
+          <label class="text-field__label" for="content">Custom status content</label>
+          <input class="text-field__input" type="text" name="content" />
+        </div>
+
+        <button class="button" type="submit">Add status</button>
       </div>
+    </form>
+  </div>
 
-      <div id="custom-status" class="text-field hide">
-        <label class="text-field__label" for="content">Custom status content</label>
-        <input class="text-field__input" type="text" name="content" />
-      </div>
-
-      <button class="button" type="submit">Add status</button>
-    </div>
-  </form>
-
-  <% include status %>
+  <% include statuses %>
 
   <% include subscribers %>
 

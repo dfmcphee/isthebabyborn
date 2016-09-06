@@ -35,3 +35,31 @@
     }
   }
 }
+
+.list--type-image {
+  > li {
+    padding-left: 0;
+
+    > * + * {
+      margin-left: spacing();
+    }
+  }
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+}
+
+.list-item__image {
+  flex: 0 0 48px;
+}
+
+.list-item__content {
+  flex: 1 1 auto;
+  font-size: 2rem;
+}
+
+.list-item__meta {
+  font-size: 1.3rem;
+}
